@@ -29,14 +29,41 @@ namespace WindowsFormsApp1
 
         private void btCalcula_Click(object sender, EventArgs e)
         {
-            int numero1, numero2;
+            float numero1, numero2;
             string operador;
-            int resultado;
+            float resultado;
 
-            numero1 = int.Parse(txtNum1.Text);
-            numero2 = Convert.ToInt32(txtNum2.Text);
+            numero1 = float.Parse(txtNum1.Text);
+            numero2 = Convert.ToSingle(txtNum2.Text);
 
-            if (txtOperador.Text == "+")
+            operador = txtOperador.Text;
+
+            switch (operador)
+            {
+                case "+":
+                    resultado = numero1 + numero2;
+                    break;
+
+                case "-":
+                    resultado = numero1 - numero2;
+                    break;
+
+                case "*":
+                    resultado = numero1 * numero2;
+                    break;
+
+                case "/"
+                    :
+                    resultado = numero1 / numero2;
+                    break;
+
+                default:
+                    resultado = 0;
+                    break;
+            }
+
+
+            /*if (txtOperador.Text == "+")
             {
                 resultado = numero1 + numero2;
             }
@@ -61,8 +88,9 @@ namespace WindowsFormsApp1
                 resultado = 0;
             }
 
-
+    */
             txtResultado.Text = resultado.ToString();
         }
+        
     }
 }
